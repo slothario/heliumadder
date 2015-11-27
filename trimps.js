@@ -14,16 +14,34 @@ $( document ).ready(function() {
       alert("Must set a valid amount of helium to add! (Don't use abbreviations like K or M.)");
     }
     else{
-      $('#outputTA').val(setHelium(parseInt(heliumAmount),saveString));
+      $('#outputTA').val(setPortal(parseInt(heliumAmount),saveString));
     }
     return false; 
   });
   
 });
 
-function setHelium(numHelium, saveString){
+function setPortal(numHelium, saveString){
   var theJSON = JSON.parse(LZString.decompressFromBase64(saveString));
   theJSON.resources.helium.owned=numHelium;
+  if($('#Carpentry').is(':checked')==true){
+    theJSON.portal.Carpentry.locked=false;
+  }
+  if($('#Relentlessness').is(':checked')==true){
+    theJSON.portal.Relentlessness.locked=false;
+  }
+  if($('#Resilience').is(':checked')==true){
+    theJSON.portal.Resilience.locked=false;
+  }
+  if($('#Anticipation').is(':checked')==true){
+    theJSON.portal.Anticipation.locked=false;
+  }
+  if($('#Siphonology').is(':checked')==true){
+    theJSON.portal.Siphonology.locked=false;
+  }
+  if($('#Coordinated').is(':checked')==true){
+    theJSON.portal.Coordinated.locked=false;
+  }
   return LZString.compressToBase64(JSON.stringify(theJSON));
 }
 
