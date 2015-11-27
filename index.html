@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Trimps magical helium adder</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="lz-string.js"></script>
+<script src="trimps.js"></script>
+</head>
+<body>
+<h3>Welcome to the Magical Helium Adder!</h3>
+<p>To add helium to the save file, simply paste your save file below, enter a new helium value, and hit "generate new save file!" Use with caution.</p>
+<p>Input save file here:<br/>
+Or, <a href="#" id="useNew" />click here</a> to use a brand new save file</a>
+</p>
+<textarea id="inputTA" rows="10" cols="100"></textarea>
+
+<p>Set amount of helium: <input type="text" name="helium" id="heliumAmount"/>  <input type="submit" id="genNew" value="Generate new save file"></p>
+<p>Output save file:</p>
+<textarea id="outputTA" rows="10" cols="100"></textarea>
+</body>
+</html>
